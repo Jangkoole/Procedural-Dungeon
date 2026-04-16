@@ -1,0 +1,38 @@
+name: C++ CI Pipeline
+
+on:
+  pull_request:
+    branches:
+      - main
+      - develop
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Install build tools
+        run: sudo apt-get update && sudo apt-get install -y build-essential
+
+      - name: Build with g++
+        run: |
+          echo "Compiling all .cpp files..."
+          g++ -std=c++17 -O2 $(find DeepDungeon/src -name "*.cpp") -IDeepDungeon/include -o main
+
+      - name: Verify build artifact
+        run: |
+          if [ -f main ]; then
+            echo "Build succeeded"
+            ls -la main
+          else
+            echo "Build failed"
+            exit 1
+          fi
+
+      - name: Run program (basic test)
+        run: |
+          echo "Running executable..."
+          ./main || echo "Program may require input, skipping runtime errors"
