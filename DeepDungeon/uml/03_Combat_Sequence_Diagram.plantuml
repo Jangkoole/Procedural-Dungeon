@@ -1,0 +1,114 @@
+@startuml DeepDungeon_Combat_Sequence_Diagram
+autonumber
+skinparam sequence {
+    ArrowColor Black
+    ActorBorderColor Black
+    LifeLineBorderColor Black
+}
+
+actor 玩家 as Player
+participant "Game\n(游戏主循环)" as Game
+participant "Monster\n(怪物)" as Monster
+participant "Map\n(地图)" as Map
+
+== 玩家发起攻击流程 ==
+
+Player -> Game : tryMovePlayer(dx, dy)
+activate Game
+
+alt 目标位置是怪物
+    Game -> Game : getMonsterAt(newX, newY)
+    Game -> Game : attackMonster(monster)
+    
+    == 攻击判定核心逻辑 ==
+    
+    Game -> Player : totalAtk()
+    activate Player
+    Player --> Game : 返回总攻击力 (基础 + 武器)
+    deactivate Player
+    
+    Game -> Monster : takeDamage(damage)
+    activate Monster
+    Monster -> Monster : actualDamage = max(1, damage - def_)
+    Monster -> Monster : hp_ = max(0, hp_ - actualDamage)
+    
+    alt 怪物存活
+        Monster --> Game : 未死亡
+        Game -> Game : addLog("攻击造成 XX 伤害")
+        
+        == 怪物反击阶段 ==
+        
+        Game -> Game : updateMonsters()
+        Game -> Monster : 移动到玩家位置或追踪
+        
+        alt 怪物成功接近玩家
+            Monster -> Player : takeDamage(monsterAtk - playerDef)
+            activate Player
+            Player -> Player : hp_ = max(0, hp_ - damage)
+            
+            alt 玩家死亡
+                Player --> Monster : 已死亡
+                Monster --> Game : 玩家死亡
+                Game -> Game : gameOver_ = true
+                Game --> Player : 游戏结束
+            else 玩家存活
+                Player --> Monster : 存活
+                Monster --> Game : 反击完成
+            end
+            deactivate Player
+        else 怪物被阻挡
+            Monster --> Game : 无法移动
+        end
+        
+    else 怪物死亡
+        Monster --> Game : 已死亡
+        Game -> Game : addLog("怪物被击败")
+        Game -> Player : addExp(20)
+        activate Player
+        Player -> Player : exp_ += 20
+        
+        alt 达到升级阈值
+            Player -> Player : level_++
+            Player -> Player : maxHp_ += 10
+            Player -> Player : atk_ += 2
+            Player --> Game : 升级完成
+            Game -> Game : addLog("升级了!")
+        else 未升级
+            Player --> Game : 仅增加经验
+        end
+        deactivate Player
+        
+        Game -> Game : 从 entities_移除怪物
+        
+        alt 所有怪物清除
+            Game -> Game : gameWon_ = true
+            Game -> Game : gameOver_ = true
+            Game --> Player : 胜利!
+        else 仍有怪物
+            Game --> Player : 继续游戏
+        end
+    end
+    deactivate Monster
+    
+else 目标位置是空地
+    Game -> Map : isWalkable(newX, newY)
+    activate Map
+    
+    alt 可通行
+        Map --> Game : true
+        Game -> Player : move(dx, dy)
+        activate Player
+        Player -> Player : x_ += dx, y_ += dy
+        Player --> Game : 移动完成
+        deactivate Player
+        Game -> Game : pickupItem()
+        Game --> Player : 移动成功
+    else 不可通行 (墙/水)
+        Map --> Game : false
+        Game --> Player : "那是墙"
+    end
+    deactivate Map
+end
+
+deactivate Game
+@enduml

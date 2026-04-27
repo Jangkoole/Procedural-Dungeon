@@ -1,0 +1,37 @@
+@startuml PAD_PickupItem
+title PAD图: Game::pickupItem() - 物品拾取算法
+
+skinparam backgroundColor #FEFEFE
+skinparam activityBackgroundColor #E0F2F1
+skinparam activityBorderColor #009688
+skinparam activityFontSize 14
+
+start
+
+:item = getItemAt(player_->x(), player_->y());
+
+if (item != nullptr?) then (是)
+  switch (item->itemType())
+    case (Weapon)
+      :player_->equipWeapon(5);
+      :添加日志 "Found sword! ATK +5";
+    case (Potion)
+      :player_->addPotion();
+      :添加日志 "Found potion! Press P";
+    case (默认)
+      :无效果;
+  endswitch
+  
+  :从 entities_ 移除物品;
+  note right
+    entities_.erase(
+      remove_if(..., item)
+    )
+  end note
+else (否)
+  :无物品;
+endif
+
+stop
+
+@enduml

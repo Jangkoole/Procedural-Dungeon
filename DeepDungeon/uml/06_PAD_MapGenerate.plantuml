@@ -1,0 +1,47 @@
+@startuml PAD_MapGenerate
+title PAD图: Map::generate() - 地图生成算法
+
+skinparam backgroundColor #FEFEFE
+skinparam activityBackgroundColor #E8F5E9
+skinparam activityBorderColor #4CAF50
+skinparam activityFontSize 14
+
+start
+
+:初始化全为墙;
+note right
+  for y = 0 to height_-1
+    for x = 0 to width_-1
+      tiles_[y][x].type = Wall
+      tiles_[y][x].explored = false
+      tiles_[y][x].visible = false
+end note
+
+:generateRooms();
+note right
+  for i = 0 to 5
+    随机生成 roomW, roomH (4-8)
+    随机生成 roomX, roomY
+    挖掘房间 (设置 type = Floor)
+end note
+
+:generateCorridors();
+note right
+  收集所有 Floor 单元格
+  排序 floorTiles
+  for i = 0 to size-2
+    水平挖走廊 (x1 to x2, y = y1)
+    垂直挖走廊 (y1 to y2, x = x2)
+end note
+
+:addWaterFeatures();
+note right
+  for y = 1 to height_-2
+    for x = 1 to width_-2
+      if tile == Floor && rand < 10%
+        type = Water
+end note
+
+stop
+
+@enduml
