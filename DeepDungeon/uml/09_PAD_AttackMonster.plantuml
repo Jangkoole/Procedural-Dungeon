@@ -1,0 +1,51 @@
+@startuml PAD_AttackMonster
+title PAD图: Game::attackMonster() - 战斗伤害计算算法
+
+skinparam backgroundColor #FEFEFE
+skinparam activityBackgroundColor #FFEBEE
+skinparam activityBorderColor #F44336
+skinparam activityFontSize 14
+
+start
+
+:计算伤害;
+note right
+  damage = player_->totalAtk()
+end note
+
+:monster->takeDamage(damage);
+
+:添加日志;
+note right
+  "You attacked for X damage"
+end note
+
+if (monster->isAlive()?) then (否，死亡)
+  :添加日志;
+  note right
+    "Monster defeated! +20 exp"
+  end note
+  
+  :player_->addExp(20);
+  
+  :从 entities_ 移除怪物;
+  note right
+    entities_.erase(
+      remove_if(..., monster)
+    )
+  end note
+  
+  if (entities_.empty()?) then (是)
+    :gameWon_ = true;
+    :gameOver_ = true;
+    :添加日志 "Victory!";
+  else (否)
+    :继续游戏;
+  endif
+else (是，存活)
+  :继续战斗;
+endif
+
+stop
+
+@enduml

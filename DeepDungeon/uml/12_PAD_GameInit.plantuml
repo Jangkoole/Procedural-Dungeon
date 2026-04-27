@@ -1,0 +1,54 @@
+@startuml PAD_GameInit
+title PAD图: Game::init() - 游戏初始化算法
+
+skinparam backgroundColor #FEFEFE
+skinparam activityBackgroundColor #FFF9C4
+skinparam activityBorderColor #FFC107
+skinparam activityFontSize 14
+
+start
+
+:添加欢迎日志;
+note right
+  "Welcome to Deep Dungeon"
+  "Use W/A/S/D to move, Q to quit"
+end note
+
+:map_.generate();
+
+:放置玩家;
+note right
+  for y = 0 to height_-1
+    for x = 0 to width_-1
+      if isWalkable(x, y)
+        player_ = Player(x, y)
+        break
+end note
+
+:生成 5 个怪物;
+note right
+  for i = 0 to 4
+    随机位置 (最多 100 次尝试)
+    检查: isWalkable && no monster
+    entities_.push_back(Monster)
+end note
+
+:生成 3 个物品;
+note right
+  for i = 0 to 2
+    随机位置 (最多 100 次尝试)
+    检查: isWalkable && no monster && no item
+    随机类型 (Weapon/Potion)
+    entities_.push_back(Item)
+end note
+
+:updateFOV();
+
+:添加日志;
+note right
+  "You entered a mysterious dungeon..."
+end note
+
+stop
+
+@enduml

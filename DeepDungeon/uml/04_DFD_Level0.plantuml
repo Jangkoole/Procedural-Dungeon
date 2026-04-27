@@ -1,0 +1,76 @@
+@startuml DeepDungeon_DFD
+skinparam rectangle {
+    BorderColor Black
+    BackgroundColor White
+}
+skinparam ellipse {
+    BorderColor Black
+    BackgroundColor LightGray
+}
+skinparam arrow {
+    Color Black
+}
+
+title DeepDungeon 核心模块数据流图 (DFD - Level 0)
+
+' 外部实体
+rectangle "玩家" as Player #LightBlue
+rectangle "控制台输入" as Input #LightBlue
+rectangle "控制台输出" as Output #LightBlue
+
+' 核心处理过程
+ellipse "P1: 处理输入命令" as P1
+ellipse "P2: 更新游戏状态" as P2
+ellipse "P3: 渲染游戏画面" as P3
+
+' 数据存储
+rectangle "D1: 地图数据" as D1 #LightYellow
+rectangle "D2: 玩家状态" as D2 #LightYellow
+rectangle "D3: 实体列表" as D3 #LightYellow
+rectangle "D4: 游戏日志" as D4 #LightYellow
+
+' 数据流
+Player --> Input : 键盘输入 (W/A/S/D/...)
+Input --> P1 : 原始输入字符串
+
+P1 --> P1 : 命令解析
+
+P1 --> D2 : 读取玩家位置
+P1 --> D3 : 读取实体位置
+P1 --> P2 : 有效命令
+
+P2 --> D1 : 读取/更新地图
+P2 --> D2 : 更新玩家 HP/Exp
+P2 --> D3 : 更新/移除实体
+P2 --> D4 : 添加日志消息
+
+P3 --> D1 : 读取地图图块
+P3 --> D2 : 读取玩家状态
+P3 --> D3 : 读取实体符号
+P3 --> D4 : 读取最近日志
+P3 --> Output : 渲染字符串
+
+note right of P1
+  P1 处理逻辑:
+  - 解析输入字符
+  - 验证命令合法性
+  - 转换为主观命令
+end note
+
+note right of P2
+  P2 处理逻辑:
+  - 玩家移动/攻击
+  - 怪物 AI 更新
+  - 碰撞检测
+  - 胜负判定
+end note
+
+note right of P3
+  P3 处理逻辑:
+  - FOV 可见性计算
+  - 地图渲染
+  - 状态栏渲染
+  - 日志渲染
+end note
+
+@enduml

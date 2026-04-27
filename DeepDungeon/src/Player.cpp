@@ -12,15 +12,17 @@ Player::Player(int x, int y)
 }
 
 void Player::addExp(int amount) {
+    int oldLevel = level_;
     exp_ += amount;
     // 简单升级逻辑：每 50 exp 升一级
     int newLevel = exp_ / 50 + 1;
     if (newLevel > level_) {
+        int levelsGained = newLevel - level_;
         level_ = newLevel;
-        maxHp_ += 10;
+        maxHp_ += 10 * levelsGained;
         hp_ = maxHp_;  // 升级时满血
-        atk_ += 2;
-        def_ += 1;
+        atk_ += 2 * levelsGained;
+        def_ += 1 * levelsGained;
     }
 }
 

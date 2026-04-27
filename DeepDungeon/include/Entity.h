@@ -56,7 +56,7 @@ public:
     
     void setHp(int hp) { hp_ = hp; }
     void setMaxHp(int hp) { maxHp_ = hp; }
-    void setAtk(int atk) { atk_ = atk_; }
+    void setAtk(int atk) { atk_ = atk; }
     void setDef(int def) { def_ = def_; }
     
     // 是否存活

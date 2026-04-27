@@ -1,0 +1,679 @@
+Start testing: Apr 23 21:59 中国标准时间
+----------------------------------------------------------
+1/26 Testing: PlayerTest.DefaultAttributes
+1/26 Test: PlayerTest.DefaultAttributes
+Command: "D:/dev/VSCode/ExperimentSoftwareEngineering/DeepDungeon/build/tests/DeepDungeonTests.exe" "--gtest_filter=PlayerTest.DefaultAttributes" "--gtest_also_run_disabled_tests"
+Directory: D:/dev/VSCode/ExperimentSoftwareEngineering/DeepDungeon/build/tests
+"PlayerTest.DefaultAttributes" start time: Apr 23 21:59 中国标准时间
+Output:
+----------------------------------------------------------
+Note: Google Test filter = PlayerTest.DefaultAttributes
+[==========] Running 1 test from 1 test suite.
+[----------] Global test environment set-up.
+[----------] 1 test from PlayerTest
+[ RUN      ] PlayerTest.DefaultAttributes
+[       OK ] PlayerTest.DefaultAttributes (0 ms)
+[----------] 1 test from PlayerTest (0 ms total)
+
+[----------] Global test environment tear-down
+[==========] 1 test from 1 test suite ran. (0 ms total)
+[  PASSED  ] 1 test.
+<end of output>
+Test time =   0.03 sec
+----------------------------------------------------------
+Test Passed.
+"PlayerTest.DefaultAttributes" end time: Apr 23 21:59 中国标准时间
+"PlayerTest.DefaultAttributes" time elapsed: 00:00:00
+----------------------------------------------------------
+
+2/26 Testing: PlayerTest.AddExp_NoLevelUp
+2/26 Test: PlayerTest.AddExp_NoLevelUp
+Command: "D:/dev/VSCode/ExperimentSoftwareEngineering/DeepDungeon/build/tests/DeepDungeonTests.exe" "--gtest_filter=PlayerTest.AddExp_NoLevelUp" "--gtest_also_run_disabled_tests"
+Directory: D:/dev/VSCode/ExperimentSoftwareEngineering/DeepDungeon/build/tests
+"PlayerTest.AddExp_NoLevelUp" start time: Apr 23 21:59 中国标准时间
+Output:
+----------------------------------------------------------
+Note: Google Test filter = PlayerTest.AddExp_NoLevelUp
+[==========] Running 1 test from 1 test suite.
+[----------] Global test environment set-up.
+[----------] 1 test from PlayerTest
+[ RUN      ] PlayerTest.AddExp_NoLevelUp
+[       OK ] PlayerTest.AddExp_NoLevelUp (0 ms)
+[----------] 1 test from PlayerTest (0 ms total)
+
+[----------] Global test environment tear-down
+[==========] 1 test from 1 test suite ran. (0 ms total)
+[  PASSED  ] 1 test.
+<end of output>
+Test time =   0.03 sec
+----------------------------------------------------------
+Test Passed.
+"PlayerTest.AddExp_NoLevelUp" end time: Apr 23 21:59 中国标准时间
+"PlayerTest.AddExp_NoLevelUp" time elapsed: 00:00:00
+----------------------------------------------------------
+
+3/26 Testing: PlayerTest.AddExp_LevelUpOnce
+3/26 Test: PlayerTest.AddExp_LevelUpOnce
+Command: "D:/dev/VSCode/ExperimentSoftwareEngineering/DeepDungeon/build/tests/DeepDungeonTests.exe" "--gtest_filter=PlayerTest.AddExp_LevelUpOnce" "--gtest_also_run_disabled_tests"
+Directory: D:/dev/VSCode/ExperimentSoftwareEngineering/DeepDungeon/build/tests
+"PlayerTest.AddExp_LevelUpOnce" start time: Apr 23 21:59 中国标准时间
+Output:
+----------------------------------------------------------
+Note: Google Test filter = PlayerTest.AddExp_LevelUpOnce
+[==========] Running 1 test from 1 test suite.
+[----------] Global test environment set-up.
+[----------] 1 test from PlayerTest
+[ RUN      ] PlayerTest.AddExp_LevelUpOnce
+[       OK ] PlayerTest.AddExp_LevelUpOnce (0 ms)
+[----------] 1 test from PlayerTest (0 ms total)
+
+[----------] Global test environment tear-down
+[==========] 1 test from 1 test suite ran. (0 ms total)
+[  PASSED  ] 1 test.
+<end of output>
+Test time =   0.03 sec
+----------------------------------------------------------
+Test Passed.
+"PlayerTest.AddExp_LevelUpOnce" end time: Apr 23 21:59 中国标准时间
+"PlayerTest.AddExp_LevelUpOnce" time elapsed: 00:00:00
+----------------------------------------------------------
+
+4/26 Testing: PlayerTest.AddExp_LevelUpMultipleTimes
+4/26 Test: PlayerTest.AddExp_LevelUpMultipleTimes
+Command: "D:/dev/VSCode/ExperimentSoftwareEngineering/DeepDungeon/build/tests/DeepDungeonTests.exe" "--gtest_filter=PlayerTest.AddExp_LevelUpMultipleTimes" "--gtest_also_run_disabled_tests"
+Directory: D:/dev/VSCode/ExperimentSoftwareEngineering/DeepDungeon/build/tests
+"PlayerTest.AddExp_LevelUpMultipleTimes" start time: Apr 23 21:59 中国标准时间
+Output:
+----------------------------------------------------------
+Note: Google Test filter = PlayerTest.AddExp_LevelUpMultipleTimes
+[==========] Running 1 test from 1 test suite.
+[----------] Global test environment set-up.
+[----------] 1 test from PlayerTest
+[ RUN      ] PlayerTest.AddExp_LevelUpMultipleTimes
+[       OK ] PlayerTest.AddExp_LevelUpMultipleTimes (0 ms)
+[----------] 1 test from PlayerTest (0 ms total)
+
+[----------] Global test environment tear-down
+[==========] 1 test from 1 test suite ran. (0 ms total)
+[  PASSED  ] 1 test.
+<end of output>
+Test time =   0.03 sec
+----------------------------------------------------------
+Test Passed.
+"PlayerTest.AddExp_LevelUpMultipleTimes" end time: Apr 23 21:59 中国标准时间
+"PlayerTest.AddExp_LevelUpMultipleTimes" time elapsed: 00:00:00
+----------------------------------------------------------
+
+5/26 Testing: PlayerTest.AddExp_ExactLevelBoundary
+5/26 Test: PlayerTest.AddExp_ExactLevelBoundary
+Command: "D:/dev/VSCode/ExperimentSoftwareEngineering/DeepDungeon/build/tests/DeepDungeonTests.exe" "--gtest_filter=PlayerTest.AddExp_ExactLevelBoundary" "--gtest_also_run_disabled_tests"
+Directory: D:/dev/VSCode/ExperimentSoftwareEngineering/DeepDungeon/build/tests
+"PlayerTest.AddExp_ExactLevelBoundary" start time: Apr 23 21:59 中国标准时间
+Output:
+----------------------------------------------------------
+Note: Google Test filter = PlayerTest.AddExp_ExactLevelBoundary
+[==========] Running 1 test from 1 test suite.
+[----------] Global test environment set-up.
+[----------] 1 test from PlayerTest
+[ RUN      ] PlayerTest.AddExp_ExactLevelBoundary
+[       OK ] PlayerTest.AddExp_ExactLevelBoundary (0 ms)
+[----------] 1 test from PlayerTest (0 ms total)
+
+[----------] Global test environment tear-down
+[==========] 1 test from 1 test suite ran. (0 ms total)
+[  PASSED  ] 1 test.
+<end of output>
+Test time =   0.02 sec
+----------------------------------------------------------
+Test Passed.
+"PlayerTest.AddExp_ExactLevelBoundary" end time: Apr 23 21:59 中国标准时间
+"PlayerTest.AddExp_ExactLevelBoundary" time elapsed: 00:00:00
+----------------------------------------------------------
+
+6/26 Testing: PlayerTest.AddExp_LevelUpHealsToFull
+6/26 Test: PlayerTest.AddExp_LevelUpHealsToFull
+Command: "D:/dev/VSCode/ExperimentSoftwareEngineering/DeepDungeon/build/tests/DeepDungeonTests.exe" "--gtest_filter=PlayerTest.AddExp_LevelUpHealsToFull" "--gtest_also_run_disabled_tests"
+Directory: D:/dev/VSCode/ExperimentSoftwareEngineering/DeepDungeon/build/tests
+"PlayerTest.AddExp_LevelUpHealsToFull" start time: Apr 23 21:59 中国标准时间
+Output:
+----------------------------------------------------------
+Note: Google Test filter = PlayerTest.AddExp_LevelUpHealsToFull
+[==========] Running 1 test from 1 test suite.
+[----------] Global test environment set-up.
+[----------] 1 test from PlayerTest
+[ RUN      ] PlayerTest.AddExp_LevelUpHealsToFull
+[       OK ] PlayerTest.AddExp_LevelUpHealsToFull (0 ms)
+[----------] 1 test from PlayerTest (0 ms total)
+
+[----------] Global test environment tear-down
+[==========] 1 test from 1 test suite ran. (0 ms total)
+[  PASSED  ] 1 test.
+<end of output>
+Test time =   0.02 sec
+----------------------------------------------------------
+Test Passed.
+"PlayerTest.AddExp_LevelUpHealsToFull" end time: Apr 23 21:59 中国标准时间
+"PlayerTest.AddExp_LevelUpHealsToFull" time elapsed: 00:00:00
+----------------------------------------------------------
+
+7/26 Testing: PlayerTest.AddExp_MultipleLevelsInOneCall
+7/26 Test: PlayerTest.AddExp_MultipleLevelsInOneCall
+Command: "D:/dev/VSCode/ExperimentSoftwareEngineering/DeepDungeon/build/tests/DeepDungeonTests.exe" "--gtest_filter=PlayerTest.AddExp_MultipleLevelsInOneCall" "--gtest_also_run_disabled_tests"
+Directory: D:/dev/VSCode/ExperimentSoftwareEngineering/DeepDungeon/build/tests
+"PlayerTest.AddExp_MultipleLevelsInOneCall" start time: Apr 23 21:59 中国标准时间
+Output:
+----------------------------------------------------------
+Note: Google Test filter = PlayerTest.AddExp_MultipleLevelsInOneCall
+[==========] Running 1 test from 1 test suite.
+[----------] Global test environment set-up.
+[----------] 1 test from PlayerTest
+[ RUN      ] PlayerTest.AddExp_MultipleLevelsInOneCall
+[       OK ] PlayerTest.AddExp_MultipleLevelsInOneCall (0 ms)
+[----------] 1 test from PlayerTest (0 ms total)
+
+[----------] Global test environment tear-down
+[==========] 1 test from 1 test suite ran. (0 ms total)
+[  PASSED  ] 1 test.
+<end of output>
+Test time =   0.03 sec
+----------------------------------------------------------
+Test Passed.
+"PlayerTest.AddExp_MultipleLevelsInOneCall" end time: Apr 23 21:59 中国标准时间
+"PlayerTest.AddExp_MultipleLevelsInOneCall" time elapsed: 00:00:00
+----------------------------------------------------------
+
+8/26 Testing: PlayerTest.UsePotion_NoPotions
+8/26 Test: PlayerTest.UsePotion_NoPotions
+Command: "D:/dev/VSCode/ExperimentSoftwareEngineering/DeepDungeon/build/tests/DeepDungeonTests.exe" "--gtest_filter=PlayerTest.UsePotion_NoPotions" "--gtest_also_run_disabled_tests"
+Directory: D:/dev/VSCode/ExperimentSoftwareEngineering/DeepDungeon/build/tests
+"PlayerTest.UsePotion_NoPotions" start time: Apr 23 21:59 中国标准时间
+Output:
+----------------------------------------------------------
+Note: Google Test filter = PlayerTest.UsePotion_NoPotions
+[==========] Running 1 test from 1 test suite.
+[----------] Global test environment set-up.
+[----------] 1 test from PlayerTest
+[ RUN      ] PlayerTest.UsePotion_NoPotions
+[       OK ] PlayerTest.UsePotion_NoPotions (0 ms)
+[----------] 1 test from PlayerTest (0 ms total)
+
+[----------] Global test environment tear-down
+[==========] 1 test from 1 test suite ran. (0 ms total)
+[  PASSED  ] 1 test.
+<end of output>
+Test time =   0.03 sec
+----------------------------------------------------------
+Test Passed.
+"PlayerTest.UsePotion_NoPotions" end time: Apr 23 21:59 中国标准时间
+"PlayerTest.UsePotion_NoPotions" time elapsed: 00:00:00
+----------------------------------------------------------
+
+9/26 Testing: PlayerTest.UsePotion_HealsHp
+9/26 Test: PlayerTest.UsePotion_HealsHp
+Command: "D:/dev/VSCode/ExperimentSoftwareEngineering/DeepDungeon/build/tests/DeepDungeonTests.exe" "--gtest_filter=PlayerTest.UsePotion_HealsHp" "--gtest_also_run_disabled_tests"
+Directory: D:/dev/VSCode/ExperimentSoftwareEngineering/DeepDungeon/build/tests
+"PlayerTest.UsePotion_HealsHp" start time: Apr 23 21:59 中国标准时间
+Output:
+----------------------------------------------------------
+Note: Google Test filter = PlayerTest.UsePotion_HealsHp
+[==========] Running 1 test from 1 test suite.
+[----------] Global test environment set-up.
+[----------] 1 test from PlayerTest
+[ RUN      ] PlayerTest.UsePotion_HealsHp
+[       OK ] PlayerTest.UsePotion_HealsHp (0 ms)
+[----------] 1 test from PlayerTest (0 ms total)
+
+[----------] Global test environment tear-down
+[==========] 1 test from 1 test suite ran. (0 ms total)
+[  PASSED  ] 1 test.
+<end of output>
+Test time =   0.03 sec
+----------------------------------------------------------
+Test Passed.
+"PlayerTest.UsePotion_HealsHp" end time: Apr 23 21:59 中国标准时间
+"PlayerTest.UsePotion_HealsHp" time elapsed: 00:00:00
+----------------------------------------------------------
+
+10/26 Testing: PlayerTest.UsePotion_DoesNotExceedMaxHp
+10/26 Test: PlayerTest.UsePotion_DoesNotExceedMaxHp
+Command: "D:/dev/VSCode/ExperimentSoftwareEngineering/DeepDungeon/build/tests/DeepDungeonTests.exe" "--gtest_filter=PlayerTest.UsePotion_DoesNotExceedMaxHp" "--gtest_also_run_disabled_tests"
+Directory: D:/dev/VSCode/ExperimentSoftwareEngineering/DeepDungeon/build/tests
+"PlayerTest.UsePotion_DoesNotExceedMaxHp" start time: Apr 23 21:59 中国标准时间
+Output:
+----------------------------------------------------------
+Note: Google Test filter = PlayerTest.UsePotion_DoesNotExceedMaxHp
+[==========] Running 1 test from 1 test suite.
+[----------] Global test environment set-up.
+[----------] 1 test from PlayerTest
+[ RUN      ] PlayerTest.UsePotion_DoesNotExceedMaxHp
+[       OK ] PlayerTest.UsePotion_DoesNotExceedMaxHp (0 ms)
+[----------] 1 test from PlayerTest (0 ms total)
+
+[----------] Global test environment tear-down
+[==========] 1 test from 1 test suite ran. (0 ms total)
+[  PASSED  ] 1 test.
+<end of output>
+Test time =   0.03 sec
+----------------------------------------------------------
+Test Passed.
+"PlayerTest.UsePotion_DoesNotExceedMaxHp" end time: Apr 23 21:59 中国标准时间
+"PlayerTest.UsePotion_DoesNotExceedMaxHp" time elapsed: 00:00:00
+----------------------------------------------------------
+
+11/26 Testing: PlayerTest.UsePotion_MultiplePotions
+11/26 Test: PlayerTest.UsePotion_MultiplePotions
+Command: "D:/dev/VSCode/ExperimentSoftwareEngineering/DeepDungeon/build/tests/DeepDungeonTests.exe" "--gtest_filter=PlayerTest.UsePotion_MultiplePotions" "--gtest_also_run_disabled_tests"
+Directory: D:/dev/VSCode/ExperimentSoftwareEngineering/DeepDungeon/build/tests
+"PlayerTest.UsePotion_MultiplePotions" start time: Apr 23 21:59 中国标准时间
+Output:
+----------------------------------------------------------
+Note: Google Test filter = PlayerTest.UsePotion_MultiplePotions
+[==========] Running 1 test from 1 test suite.
+[----------] Global test environment set-up.
+[----------] 1 test from PlayerTest
+[ RUN      ] PlayerTest.UsePotion_MultiplePotions
+[       OK ] PlayerTest.UsePotion_MultiplePotions (0 ms)
+[----------] 1 test from PlayerTest (0 ms total)
+
+[----------] Global test environment tear-down
+[==========] 1 test from 1 test suite ran. (0 ms total)
+[  PASSED  ] 1 test.
+<end of output>
+Test time =   0.02 sec
+----------------------------------------------------------
+Test Passed.
+"PlayerTest.UsePotion_MultiplePotions" end time: Apr 23 21:59 中国标准时间
+"PlayerTest.UsePotion_MultiplePotions" time elapsed: 00:00:00
+----------------------------------------------------------
+
+12/26 Testing: PlayerTest.EquipWeapon_IncreasesTotalAtk
+12/26 Test: PlayerTest.EquipWeapon_IncreasesTotalAtk
+Command: "D:/dev/VSCode/ExperimentSoftwareEngineering/DeepDungeon/build/tests/DeepDungeonTests.exe" "--gtest_filter=PlayerTest.EquipWeapon_IncreasesTotalAtk" "--gtest_also_run_disabled_tests"
+Directory: D:/dev/VSCode/ExperimentSoftwareEngineering/DeepDungeon/build/tests
+"PlayerTest.EquipWeapon_IncreasesTotalAtk" start time: Apr 23 21:59 中国标准时间
+Output:
+----------------------------------------------------------
+Note: Google Test filter = PlayerTest.EquipWeapon_IncreasesTotalAtk
+[==========] Running 1 test from 1 test suite.
+[----------] Global test environment set-up.
+[----------] 1 test from PlayerTest
+[ RUN      ] PlayerTest.EquipWeapon_IncreasesTotalAtk
+[       OK ] PlayerTest.EquipWeapon_IncreasesTotalAtk (0 ms)
+[----------] 1 test from PlayerTest (0 ms total)
+
+[----------] Global test environment tear-down
+[==========] 1 test from 1 test suite ran. (0 ms total)
+[  PASSED  ] 1 test.
+<end of output>
+Test time =   0.03 sec
+----------------------------------------------------------
+Test Passed.
+"PlayerTest.EquipWeapon_IncreasesTotalAtk" end time: Apr 23 21:59 中国标准时间
+"PlayerTest.EquipWeapon_IncreasesTotalAtk" time elapsed: 00:00:00
+----------------------------------------------------------
+
+13/26 Testing: PlayerTest.TotalAtk_WithLevelUpAndWeapon
+13/26 Test: PlayerTest.TotalAtk_WithLevelUpAndWeapon
+Command: "D:/dev/VSCode/ExperimentSoftwareEngineering/DeepDungeon/build/tests/DeepDungeonTests.exe" "--gtest_filter=PlayerTest.TotalAtk_WithLevelUpAndWeapon" "--gtest_also_run_disabled_tests"
+Directory: D:/dev/VSCode/ExperimentSoftwareEngineering/DeepDungeon/build/tests
+"PlayerTest.TotalAtk_WithLevelUpAndWeapon" start time: Apr 23 21:59 中国标准时间
+Output:
+----------------------------------------------------------
+Note: Google Test filter = PlayerTest.TotalAtk_WithLevelUpAndWeapon
+[==========] Running 1 test from 1 test suite.
+[----------] Global test environment set-up.
+[----------] 1 test from PlayerTest
+[ RUN      ] PlayerTest.TotalAtk_WithLevelUpAndWeapon
+[       OK ] PlayerTest.TotalAtk_WithLevelUpAndWeapon (0 ms)
+[----------] 1 test from PlayerTest (0 ms total)
+
+[----------] Global test environment tear-down
+[==========] 1 test from 1 test suite ran. (0 ms total)
+[  PASSED  ] 1 test.
+<end of output>
+Test time =   0.03 sec
+----------------------------------------------------------
+Test Passed.
+"PlayerTest.TotalAtk_WithLevelUpAndWeapon" end time: Apr 23 21:59 中国标准时间
+"PlayerTest.TotalAtk_WithLevelUpAndWeapon" time elapsed: 00:00:00
+----------------------------------------------------------
+
+14/26 Testing: EntityTest.TakeDamage_ReducesHp
+14/26 Test: EntityTest.TakeDamage_ReducesHp
+Command: "D:/dev/VSCode/ExperimentSoftwareEngineering/DeepDungeon/build/tests/DeepDungeonTests.exe" "--gtest_filter=EntityTest.TakeDamage_ReducesHp" "--gtest_also_run_disabled_tests"
+Directory: D:/dev/VSCode/ExperimentSoftwareEngineering/DeepDungeon/build/tests
+"EntityTest.TakeDamage_ReducesHp" start time: Apr 23 21:59 中国标准时间
+Output:
+----------------------------------------------------------
+Note: Google Test filter = EntityTest.TakeDamage_ReducesHp
+[==========] Running 1 test from 1 test suite.
+[----------] Global test environment set-up.
+[----------] 1 test from EntityTest
+[ RUN      ] EntityTest.TakeDamage_ReducesHp
+[       OK ] EntityTest.TakeDamage_ReducesHp (0 ms)
+[----------] 1 test from EntityTest (0 ms total)
+
+[----------] Global test environment tear-down
+[==========] 1 test from 1 test suite ran. (0 ms total)
+[  PASSED  ] 1 test.
+<end of output>
+Test time =   0.03 sec
+----------------------------------------------------------
+Test Passed.
+"EntityTest.TakeDamage_ReducesHp" end time: Apr 23 21:59 中国标准时间
+"EntityTest.TakeDamage_ReducesHp" time elapsed: 00:00:00
+----------------------------------------------------------
+
+15/26 Testing: EntityTest.TakeDamage_DefenseReduction
+15/26 Test: EntityTest.TakeDamage_DefenseReduction
+Command: "D:/dev/VSCode/ExperimentSoftwareEngineering/DeepDungeon/build/tests/DeepDungeonTests.exe" "--gtest_filter=EntityTest.TakeDamage_DefenseReduction" "--gtest_also_run_disabled_tests"
+Directory: D:/dev/VSCode/ExperimentSoftwareEngineering/DeepDungeon/build/tests
+"EntityTest.TakeDamage_DefenseReduction" start time: Apr 23 21:59 中国标准时间
+Output:
+----------------------------------------------------------
+Note: Google Test filter = EntityTest.TakeDamage_DefenseReduction
+[==========] Running 1 test from 1 test suite.
+[----------] Global test environment set-up.
+[----------] 1 test from EntityTest
+[ RUN      ] EntityTest.TakeDamage_DefenseReduction
+[       OK ] EntityTest.TakeDamage_DefenseReduction (0 ms)
+[----------] 1 test from EntityTest (0 ms total)
+
+[----------] Global test environment tear-down
+[==========] 1 test from 1 test suite ran. (0 ms total)
+[  PASSED  ] 1 test.
+<end of output>
+Test time =   0.03 sec
+----------------------------------------------------------
+Test Passed.
+"EntityTest.TakeDamage_DefenseReduction" end time: Apr 23 21:59 中国标准时间
+"EntityTest.TakeDamage_DefenseReduction" time elapsed: 00:00:00
+----------------------------------------------------------
+
+16/26 Testing: EntityTest.TakeDamage_MinimumOneDamage
+16/26 Test: EntityTest.TakeDamage_MinimumOneDamage
+Command: "D:/dev/VSCode/ExperimentSoftwareEngineering/DeepDungeon/build/tests/DeepDungeonTests.exe" "--gtest_filter=EntityTest.TakeDamage_MinimumOneDamage" "--gtest_also_run_disabled_tests"
+Directory: D:/dev/VSCode/ExperimentSoftwareEngineering/DeepDungeon/build/tests
+"EntityTest.TakeDamage_MinimumOneDamage" start time: Apr 23 21:59 中国标准时间
+Output:
+----------------------------------------------------------
+Note: Google Test filter = EntityTest.TakeDamage_MinimumOneDamage
+[==========] Running 1 test from 1 test suite.
+[----------] Global test environment set-up.
+[----------] 1 test from EntityTest
+[ RUN      ] EntityTest.TakeDamage_MinimumOneDamage
+[       OK ] EntityTest.TakeDamage_MinimumOneDamage (0 ms)
+[----------] 1 test from EntityTest (0 ms total)
+
+[----------] Global test environment tear-down
+[==========] 1 test from 1 test suite ran. (0 ms total)
+[  PASSED  ] 1 test.
+<end of output>
+Test time =   0.03 sec
+----------------------------------------------------------
+Test Passed.
+"EntityTest.TakeDamage_MinimumOneDamage" end time: Apr 23 21:59 中国标准时间
+"EntityTest.TakeDamage_MinimumOneDamage" time elapsed: 00:00:00
+----------------------------------------------------------
+
+17/26 Testing: EntityTest.TakeDamage_DoesNotGoBelowZero
+17/26 Test: EntityTest.TakeDamage_DoesNotGoBelowZero
+Command: "D:/dev/VSCode/ExperimentSoftwareEngineering/DeepDungeon/build/tests/DeepDungeonTests.exe" "--gtest_filter=EntityTest.TakeDamage_DoesNotGoBelowZero" "--gtest_also_run_disabled_tests"
+Directory: D:/dev/VSCode/ExperimentSoftwareEngineering/DeepDungeon/build/tests
+"EntityTest.TakeDamage_DoesNotGoBelowZero" start time: Apr 23 21:59 中国标准时间
+Output:
+----------------------------------------------------------
+Note: Google Test filter = EntityTest.TakeDamage_DoesNotGoBelowZero
+[==========] Running 1 test from 1 test suite.
+[----------] Global test environment set-up.
+[----------] 1 test from EntityTest
+[ RUN      ] EntityTest.TakeDamage_DoesNotGoBelowZero
+[       OK ] EntityTest.TakeDamage_DoesNotGoBelowZero (0 ms)
+[----------] 1 test from EntityTest (0 ms total)
+
+[----------] Global test environment tear-down
+[==========] 1 test from 1 test suite ran. (0 ms total)
+[  PASSED  ] 1 test.
+<end of output>
+Test time =   0.03 sec
+----------------------------------------------------------
+Test Passed.
+"EntityTest.TakeDamage_DoesNotGoBelowZero" end time: Apr 23 21:59 中国标准时间
+"EntityTest.TakeDamage_DoesNotGoBelowZero" time elapsed: 00:00:00
+----------------------------------------------------------
+
+18/26 Testing: EntityTest.Heal_RestoresHp
+18/26 Test: EntityTest.Heal_RestoresHp
+Command: "D:/dev/VSCode/ExperimentSoftwareEngineering/DeepDungeon/build/tests/DeepDungeonTests.exe" "--gtest_filter=EntityTest.Heal_RestoresHp" "--gtest_also_run_disabled_tests"
+Directory: D:/dev/VSCode/ExperimentSoftwareEngineering/DeepDungeon/build/tests
+"EntityTest.Heal_RestoresHp" start time: Apr 23 21:59 中国标准时间
+Output:
+----------------------------------------------------------
+Note: Google Test filter = EntityTest.Heal_RestoresHp
+[==========] Running 1 test from 1 test suite.
+[----------] Global test environment set-up.
+[----------] 1 test from EntityTest
+[ RUN      ] EntityTest.Heal_RestoresHp
+[       OK ] EntityTest.Heal_RestoresHp (0 ms)
+[----------] 1 test from EntityTest (0 ms total)
+
+[----------] Global test environment tear-down
+[==========] 1 test from 1 test suite ran. (0 ms total)
+[  PASSED  ] 1 test.
+<end of output>
+Test time =   0.02 sec
+----------------------------------------------------------
+Test Passed.
+"EntityTest.Heal_RestoresHp" end time: Apr 23 21:59 中国标准时间
+"EntityTest.Heal_RestoresHp" time elapsed: 00:00:00
+----------------------------------------------------------
+
+19/26 Testing: EntityTest.Heal_DoesNotExceedMaxHp
+19/26 Test: EntityTest.Heal_DoesNotExceedMaxHp
+Command: "D:/dev/VSCode/ExperimentSoftwareEngineering/DeepDungeon/build/tests/DeepDungeonTests.exe" "--gtest_filter=EntityTest.Heal_DoesNotExceedMaxHp" "--gtest_also_run_disabled_tests"
+Directory: D:/dev/VSCode/ExperimentSoftwareEngineering/DeepDungeon/build/tests
+"EntityTest.Heal_DoesNotExceedMaxHp" start time: Apr 23 21:59 中国标准时间
+Output:
+----------------------------------------------------------
+Note: Google Test filter = EntityTest.Heal_DoesNotExceedMaxHp
+[==========] Running 1 test from 1 test suite.
+[----------] Global test environment set-up.
+[----------] 1 test from EntityTest
+[ RUN      ] EntityTest.Heal_DoesNotExceedMaxHp
+[       OK ] EntityTest.Heal_DoesNotExceedMaxHp (0 ms)
+[----------] 1 test from EntityTest (0 ms total)
+
+[----------] Global test environment tear-down
+[==========] 1 test from 1 test suite ran. (0 ms total)
+[  PASSED  ] 1 test.
+<end of output>
+Test time =   0.02 sec
+----------------------------------------------------------
+Test Passed.
+"EntityTest.Heal_DoesNotExceedMaxHp" end time: Apr 23 21:59 中国标准时间
+"EntityTest.Heal_DoesNotExceedMaxHp" time elapsed: 00:00:00
+----------------------------------------------------------
+
+20/26 Testing: EntityTest.Heal_PartialThenFull
+20/26 Test: EntityTest.Heal_PartialThenFull
+Command: "D:/dev/VSCode/ExperimentSoftwareEngineering/DeepDungeon/build/tests/DeepDungeonTests.exe" "--gtest_filter=EntityTest.Heal_PartialThenFull" "--gtest_also_run_disabled_tests"
+Directory: D:/dev/VSCode/ExperimentSoftwareEngineering/DeepDungeon/build/tests
+"EntityTest.Heal_PartialThenFull" start time: Apr 23 21:59 中国标准时间
+Output:
+----------------------------------------------------------
+Note: Google Test filter = EntityTest.Heal_PartialThenFull
+[==========] Running 1 test from 1 test suite.
+[----------] Global test environment set-up.
+[----------] 1 test from EntityTest
+[ RUN      ] EntityTest.Heal_PartialThenFull
+[       OK ] EntityTest.Heal_PartialThenFull (0 ms)
+[----------] 1 test from EntityTest (0 ms total)
+
+[----------] Global test environment tear-down
+[==========] 1 test from 1 test suite ran. (0 ms total)
+[  PASSED  ] 1 test.
+<end of output>
+Test time =   0.03 sec
+----------------------------------------------------------
+Test Passed.
+"EntityTest.Heal_PartialThenFull" end time: Apr 23 21:59 中国标准时间
+"EntityTest.Heal_PartialThenFull" time elapsed: 00:00:00
+----------------------------------------------------------
+
+21/26 Testing: EntityTest.Move_ChangesPosition
+21/26 Test: EntityTest.Move_ChangesPosition
+Command: "D:/dev/VSCode/ExperimentSoftwareEngineering/DeepDungeon/build/tests/DeepDungeonTests.exe" "--gtest_filter=EntityTest.Move_ChangesPosition" "--gtest_also_run_disabled_tests"
+Directory: D:/dev/VSCode/ExperimentSoftwareEngineering/DeepDungeon/build/tests
+"EntityTest.Move_ChangesPosition" start time: Apr 23 21:59 中国标准时间
+Output:
+----------------------------------------------------------
+Note: Google Test filter = EntityTest.Move_ChangesPosition
+[==========] Running 1 test from 1 test suite.
+[----------] Global test environment set-up.
+[----------] 1 test from EntityTest
+[ RUN      ] EntityTest.Move_ChangesPosition
+[       OK ] EntityTest.Move_ChangesPosition (0 ms)
+[----------] 1 test from EntityTest (0 ms total)
+
+[----------] Global test environment tear-down
+[==========] 1 test from 1 test suite ran. (0 ms total)
+[  PASSED  ] 1 test.
+<end of output>
+Test time =   0.02 sec
+----------------------------------------------------------
+Test Passed.
+"EntityTest.Move_ChangesPosition" end time: Apr 23 21:59 中国标准时间
+"EntityTest.Move_ChangesPosition" time elapsed: 00:00:00
+----------------------------------------------------------
+
+22/26 Testing: EntityTest.IsAlive_ReturnsCorrectState
+22/26 Test: EntityTest.IsAlive_ReturnsCorrectState
+Command: "D:/dev/VSCode/ExperimentSoftwareEngineering/DeepDungeon/build/tests/DeepDungeonTests.exe" "--gtest_filter=EntityTest.IsAlive_ReturnsCorrectState" "--gtest_also_run_disabled_tests"
+Directory: D:/dev/VSCode/ExperimentSoftwareEngineering/DeepDungeon/build/tests
+"EntityTest.IsAlive_ReturnsCorrectState" start time: Apr 23 21:59 中国标准时间
+Output:
+----------------------------------------------------------
+Note: Google Test filter = EntityTest.IsAlive_ReturnsCorrectState
+[==========] Running 1 test from 1 test suite.
+[----------] Global test environment set-up.
+[----------] 1 test from EntityTest
+[ RUN      ] EntityTest.IsAlive_ReturnsCorrectState
+[       OK ] EntityTest.IsAlive_ReturnsCorrectState (0 ms)
+[----------] 1 test from EntityTest (0 ms total)
+
+[----------] Global test environment tear-down
+[==========] 1 test from 1 test suite ran. (0 ms total)
+[  PASSED  ] 1 test.
+<end of output>
+Test time =   0.02 sec
+----------------------------------------------------------
+Test Passed.
+"EntityTest.IsAlive_ReturnsCorrectState" end time: Apr 23 21:59 中国标准时间
+"EntityTest.IsAlive_ReturnsCorrectState" time elapsed: 00:00:00
+----------------------------------------------------------
+
+23/26 Testing: MonsterTest.DefaultAttributes
+23/26 Test: MonsterTest.DefaultAttributes
+Command: "D:/dev/VSCode/ExperimentSoftwareEngineering/DeepDungeon/build/tests/DeepDungeonTests.exe" "--gtest_filter=MonsterTest.DefaultAttributes" "--gtest_also_run_disabled_tests"
+Directory: D:/dev/VSCode/ExperimentSoftwareEngineering/DeepDungeon/build/tests
+"MonsterTest.DefaultAttributes" start time: Apr 23 21:59 中国标准时间
+Output:
+----------------------------------------------------------
+Note: Google Test filter = MonsterTest.DefaultAttributes
+[==========] Running 1 test from 1 test suite.
+[----------] Global test environment set-up.
+[----------] 1 test from MonsterTest
+[ RUN      ] MonsterTest.DefaultAttributes
+[       OK ] MonsterTest.DefaultAttributes (0 ms)
+[----------] 1 test from MonsterTest (0 ms total)
+
+[----------] Global test environment tear-down
+[==========] 1 test from 1 test suite ran. (0 ms total)
+[  PASSED  ] 1 test.
+<end of output>
+Test time =   0.02 sec
+----------------------------------------------------------
+Test Passed.
+"MonsterTest.DefaultAttributes" end time: Apr 23 21:59 中国标准时间
+"MonsterTest.DefaultAttributes" time elapsed: 00:00:00
+----------------------------------------------------------
+
+24/26 Testing: MonsterTest.MonsterCanBeDamaged
+24/26 Test: MonsterTest.MonsterCanBeDamaged
+Command: "D:/dev/VSCode/ExperimentSoftwareEngineering/DeepDungeon/build/tests/DeepDungeonTests.exe" "--gtest_filter=MonsterTest.MonsterCanBeDamaged" "--gtest_also_run_disabled_tests"
+Directory: D:/dev/VSCode/ExperimentSoftwareEngineering/DeepDungeon/build/tests
+"MonsterTest.MonsterCanBeDamaged" start time: Apr 23 21:59 中国标准时间
+Output:
+----------------------------------------------------------
+Note: Google Test filter = MonsterTest.MonsterCanBeDamaged
+[==========] Running 1 test from 1 test suite.
+[----------] Global test environment set-up.
+[----------] 1 test from MonsterTest
+[ RUN      ] MonsterTest.MonsterCanBeDamaged
+[       OK ] MonsterTest.MonsterCanBeDamaged (0 ms)
+[----------] 1 test from MonsterTest (0 ms total)
+
+[----------] Global test environment tear-down
+[==========] 1 test from 1 test suite ran. (0 ms total)
+[  PASSED  ] 1 test.
+<end of output>
+Test time =   0.02 sec
+----------------------------------------------------------
+Test Passed.
+"MonsterTest.MonsterCanBeDamaged" end time: Apr 23 21:59 中国标准时间
+"MonsterTest.MonsterCanBeDamaged" time elapsed: 00:00:00
+----------------------------------------------------------
+
+25/26 Testing: ItemTest.WeaponItem
+25/26 Test: ItemTest.WeaponItem
+Command: "D:/dev/VSCode/ExperimentSoftwareEngineering/DeepDungeon/build/tests/DeepDungeonTests.exe" "--gtest_filter=ItemTest.WeaponItem" "--gtest_also_run_disabled_tests"
+Directory: D:/dev/VSCode/ExperimentSoftwareEngineering/DeepDungeon/build/tests
+"ItemTest.WeaponItem" start time: Apr 23 21:59 中国标准时间
+Output:
+----------------------------------------------------------
+Note: Google Test filter = ItemTest.WeaponItem
+[==========] Running 1 test from 1 test suite.
+[----------] Global test environment set-up.
+[----------] 1 test from ItemTest
+[ RUN      ] ItemTest.WeaponItem
+[       OK ] ItemTest.WeaponItem (0 ms)
+[----------] 1 test from ItemTest (0 ms total)
+
+[----------] Global test environment tear-down
+[==========] 1 test from 1 test suite ran. (0 ms total)
+[  PASSED  ] 1 test.
+<end of output>
+Test time =   0.02 sec
+----------------------------------------------------------
+Test Passed.
+"ItemTest.WeaponItem" end time: Apr 23 21:59 中国标准时间
+"ItemTest.WeaponItem" time elapsed: 00:00:00
+----------------------------------------------------------
+
+26/26 Testing: ItemTest.PotionItem
+26/26 Test: ItemTest.PotionItem
+Command: "D:/dev/VSCode/ExperimentSoftwareEngineering/DeepDungeon/build/tests/DeepDungeonTests.exe" "--gtest_filter=ItemTest.PotionItem" "--gtest_also_run_disabled_tests"
+Directory: D:/dev/VSCode/ExperimentSoftwareEngineering/DeepDungeon/build/tests
+"ItemTest.PotionItem" start time: Apr 23 21:59 中国标准时间
+Output:
+----------------------------------------------------------
+Note: Google Test filter = ItemTest.PotionItem
+[==========] Running 1 test from 1 test suite.
+[----------] Global test environment set-up.
+[----------] 1 test from ItemTest
+[ RUN      ] ItemTest.PotionItem
+[       OK ] ItemTest.PotionItem (0 ms)
+[----------] 1 test from ItemTest (0 ms total)
+
+[----------] Global test environment tear-down
+[==========] 1 test from 1 test suite ran. (0 ms total)
+[  PASSED  ] 1 test.
+<end of output>
+Test time =   0.02 sec
+----------------------------------------------------------
+Test Passed.
+"ItemTest.PotionItem" end time: Apr 23 21:59 中国标准时间
+"ItemTest.PotionItem" time elapsed: 00:00:00
+----------------------------------------------------------
+
+End testing: Apr 23 21:59 中国标准时间

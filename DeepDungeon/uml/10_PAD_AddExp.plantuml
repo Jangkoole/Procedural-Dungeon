@@ -1,0 +1,39 @@
+@startuml PAD_AddExp
+title PAD图: Player::addExp() - 玩家升级算法
+
+skinparam backgroundColor #FEFEFE
+skinparam activityBackgroundColor #F3E5F5
+skinparam activityBorderColor #9C27B0
+skinparam activityFontSize 14
+
+start
+
+:exp_ += amount;
+
+:计算新等级;
+note right
+  newLevel = exp_ / 50 + 1
+end note
+
+if (newLevel > level_?) then (是，升级)
+  :level_ = newLevel;
+  
+  :maxHp_ += 10;
+  
+  :hp_ = maxHp_;
+  note right
+    升级时满血
+  end note
+  
+  :atk_ += 2;
+  
+  :def_ += 1;
+  
+  :添加日志 "Level Up!";
+else (否)
+  :不升级;
+endif
+
+stop
+
+@enduml
