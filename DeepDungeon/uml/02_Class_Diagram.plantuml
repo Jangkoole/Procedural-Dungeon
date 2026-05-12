@@ -1,0 +1,196 @@
+@startuml DeepDungeon_Class_Diagram
+skinparam classAttributeIconScope false
+skinparam monochrome true
+
+' 枚举类型
+enum EntityType {
+    Player
+    Monster
+    Item
+}
+
+enum ItemType {
+    Weapon
+    Potion
+    None
+}
+
+enum TileType {
+    Wall
+    Floor
+    Water
+}
+
+enum Command {
+    MoveUp
+    MoveDown
+    MoveLeft
+    MoveRight
+    Wait
+    UsePotion
+    Quit
+    Unknown
+}
+
+' Tile 结构体
+class Tile {
+    + TileType type
+    + bool explored
+    + bool visible
+}
+
+' 常量命名空间
+class dungeon::Constants {
+    {static} MAP_WIDTH: int = 40
+    {static} MAP_HEIGHT: int = 20
+    {static} FOV_RADIUS: int = 5
+    {static} CHAR_PLAYER: char = '@'
+    {static} CHAR_WALL: char = '#'
+    {static} CHAR_FLOOR: char = '.'
+    {static} CHAR_WATER: char = '~'
+    {static} CHAR_MONSTER: char = 'g'
+    {static} CHAR_WEAPON: char = '/'
+    {static} CHAR_POTION: char = '!'
+    {static} PLAYER_BASE_HP: int = 100
+    {static} PLAYER_BASE_ATK: int = 10
+    {static} PLAYER_BASE_DEF: int = 5
+}
+
+' 核心类
+class Entity {
+    # int x_
+    # int y_
+    # char symbol_
+    # EntityType type_
+    # int hp_
+    # int maxHp_
+    # int atk_
+    # int def_
+    + Entity(symbol: char, x: int, y: int, type: EntityType)
+    + x(): int
+    + y(): int
+    + setPosition(x: int, y: int): void
+    + move(dx: int, dy: int): void
+    + symbol(): char
+    + type(): EntityType
+    + hp(): int
+    + atk(): int
+    + def(): int
+    + isAlive(): bool
+    + takeDamage(damage: int): void
+    + heal(amount: int): void
+}
+
+class Monster {
+    + Monster(x: int, y: int)
+}
+
+class Item {
+    - ItemType itemType_
+    + Item(itemType: ItemType, x: int, y: int)
+    + itemType(): ItemType
+}
+
+class Player {
+    - int exp_
+    - int level_
+    - int weaponBonus_
+    - int potionCount_
+    + Player(x: int, y: int)
+    + exp(): int
+    + level(): int
+    + addExp(amount: int): void
+    + weaponAttackBonus(): int
+    + potionCount(): int
+    + equipWeapon(bonus: int): void
+    + addPotion(): void
+    + usePotion(): void
+    + totalAtk(): int
+}
+
+class Map {
+    - int width_
+    - int height_
+    - vector<vector<Tile>> tiles_
+    + Map(width: int, height: int)
+    + width(): int
+    + height(): int
+    + tile(x: int, y: int): Tile&
+    + isWalkable(x: int, y: int): bool
+    + isWater(x: int, y: int): bool
+    + generate(seed: int): void
+    + render(): string
+    + clearVisibility(): void
+    + setTileVisible(x: int, y: int): void
+    + setTileExplored(x: int, y: int): void
+    - generateRooms(): void
+    - generateCorridors(): void
+    - addWaterFeatures(): void
+    - isValid(x: int, y: int): bool
+}
+
+class Game {
+    - Map map_
+    - unique_ptr<Player> player_
+    - vector<unique_ptr<Entity>> entities_
+    - bool gameOver_
+    - bool gameWon_
+    - vector<string> log_
+    + Game()
+    + init(): void
+    + run(): void
+    + handleInput(input: string): Command
+    + update(): void
+    + render(): string
+    + isGameOver(): bool
+    + logs(): vector<string>&
+    + addLog(message: string): void
+    + tryMovePlayer(dx: int, dy: int): void
+    - attackMonster(monster: Monster*): void
+    - updateMonsters(): void
+    - checkCollisions(): void
+    - pickupItem(): void
+    - updateFOV(): void
+    - getPlayer(): Player*
+    - getMonsterAt(x: int, y: int): Monster*
+    - getItemAt(x: int, y: int): Item*
+}
+
+' 关系
+EntityType <|-- Entity : type
+ItemType <|-- Item : itemType
+TileType <|-- Tile : type
+
+Entity <|-- Monster : inherits
+Entity <|-- Item : inherits
+Entity <|-- Player : inherits
+
+Tile *-- Map : composition (tiles_)
+Entity *-- Game : composition (entities_)
+Player *-- Game : composition (player_)
+Map *-- Game : composition (map_)
+
+Game ..> Map : uses
+Game ..> Player : uses
+Game ..> Entity : uses
+Game ..> Monster : uses
+Game ..> Item : uses
+
+note top of Game
+  ⚠️ 上帝类警告
+  职责过多：
+  - 输入处理
+  - 渲染逻辑
+  - 战斗判定
+  - 怪物 AI
+  - FOV 计算
+  - 碰撞检测
+end note
+
+note right of Entity
+  基类设计良好
+  但子类行为
+  几乎都在 Game 中
+end note
+
+@enduml

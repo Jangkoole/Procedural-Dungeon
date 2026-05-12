@@ -1,0 +1,5 @@
+if(EXISTS "D:/dev/VSCode/ExperimentSoftwareEngineering/DeepDungeon/build/tests/DeepDungeonTests[1]_tests.cmake")
+  include("D:/dev/VSCode/ExperimentSoftwareEngineering/DeepDungeon/build/tests/DeepDungeonTests[1]_tests.cmake")
+else()
+  add_test(DeepDungeonTests_NOT_BUILT DeepDungeonTests_NOT_BUILT)
+endif()

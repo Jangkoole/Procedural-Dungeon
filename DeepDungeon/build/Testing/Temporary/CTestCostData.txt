@@ -1,0 +1,27 @@
+PlayerTest.DefaultAttributes 2 0.0125168
+PlayerTest.AddExp_NoLevelUp 2 0.0166242
+PlayerTest.AddExp_LevelUpOnce 2 0.0152991
+PlayerTest.AddExp_LevelUpMultipleTimes 1 0.0261256
+PlayerTest.AddExp_ExactLevelBoundary 2 0.0122827
+PlayerTest.AddExp_LevelUpHealsToFull 2 0.011828
+PlayerTest.AddExp_MultipleLevelsInOneCall 1 0.0253137
+PlayerTest.UsePotion_NoPotions 2 0.0125
+PlayerTest.UsePotion_HealsHp 2 0.0125304
+PlayerTest.UsePotion_DoesNotExceedMaxHp 2 0.0136363
+PlayerTest.UsePotion_MultiplePotions 2 0.0121851
+PlayerTest.EquipWeapon_IncreasesTotalAtk 2 0.0133274
+PlayerTest.TotalAtk_WithLevelUpAndWeapon 1 0.0250582
+EntityTest.TakeDamage_ReducesHp 2 0.0137507
+EntityTest.TakeDamage_DefenseReduction 2 0.0137739
+EntityTest.TakeDamage_MinimumOneDamage 2 0.0152999
+EntityTest.TakeDamage_DoesNotGoBelowZero 2 0.0141983
+EntityTest.Heal_RestoresHp 2 0.0112415
+EntityTest.Heal_DoesNotExceedMaxHp 2 0.0120857
+EntityTest.Heal_PartialThenFull 2 0.0125087
+EntityTest.Move_ChangesPosition 2 0.011571
+EntityTest.IsAlive_ReturnsCorrectState 2 0.0115907
+MonsterTest.DefaultAttributes 2 0.0115768
+MonsterTest.MonsterCanBeDamaged 2 0.0114099
+ItemTest.WeaponItem 2 0.0106385
+ItemTest.PotionItem 2 0.0102567
+---

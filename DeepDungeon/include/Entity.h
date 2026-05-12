@@ -1,7 +1,15 @@
 #pragma once
 
 #include <string>
+#include <vector>
+#include <memory>
 #include "Constants.h"
+
+// 前向声明
+namespace dungeon {
+class Map;
+class Player;
+}
 
 namespace dungeon {
 
@@ -48,7 +56,7 @@ public:
     
     void setHp(int hp) { hp_ = hp; }
     void setMaxHp(int hp) { maxHp_ = hp; }
-    void setAtk(int atk) { atk_ = atk_; }
+    void setAtk(int atk) { atk_ = atk; }
     void setDef(int def) { def_ = def_; }
     
     // 是否存活
@@ -75,6 +83,12 @@ protected:
 class Monster : public Entity {
 public:
     Monster(int x, int y);
+
+    // 怪物 AI - 计算移动方向
+    void calculateMoveTowards(int targetX, int targetY, int& outDx, int& outDy) const;
+
+    // 攻击玩家
+    void attackPlayer(Player& player, std::vector<std::string>& log) const;
 };
 
 // 物品类

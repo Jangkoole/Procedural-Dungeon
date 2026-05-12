@@ -1,0 +1,68 @@
+@startuml PAD_UpdateMonsters
+title PAD图: Game::updateMonsters() - 怪物AI追踪算法
+
+skinparam backgroundColor #FEFEFE
+skinparam activityBackgroundColor #FFF3E0
+skinparam activityBorderColor #FF9800
+skinparam activityFontSize 14
+
+start
+
+:遍历 entities_;
+note right
+  for each entity in entities_
+end note
+
+if (entity.type == Monster && entity.isAlive()?) then (是)
+  :获取位置;
+  note right
+    px = player_->x(), py = player_->y()
+    mx = monster->x(), my = monster->y()
+  end note
+  
+  :计算移动方向;
+  note right
+    if px > mx: dx = 1
+    else if px < mx: dx = -1
+    else if py > my: dy = 1
+    else if py < my: dy = -1
+  end note
+  
+  if (dx == 0 && dy == 0?) then (否)
+    :计算新位置;
+    note right
+      newX = mx + dx
+      newY = my + dy
+    end note
+    
+    if (newX == px && newY == py?) then (是，攻击玩家)
+      :计算伤害;
+      note right
+        damage = max(1, monster->atk() - player_->def())
+      end note
+      
+      :player_->takeDamage(damage);
+      
+      if (player_->isAlive()?) then (否)
+        :gameOver_ = true;
+        :添加日志 "You died";
+      else (是)
+        :添加日志 "Monster attacks you";
+      endif
+    else (否)
+      if (map_.isWalkable(newX, newY) && no monster?) then (是)
+        :monster->setPosition(newX, newY);
+      else (否)
+        :怪物不动;
+      endif
+    endif
+  else (是)
+    :怪物不动;
+  endif
+else (否)
+  :continue;
+endif
+
+stop
+
+@enduml

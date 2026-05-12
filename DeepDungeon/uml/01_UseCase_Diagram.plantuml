@@ -1,0 +1,78 @@
+@startuml DeepDungeon_UseCase_Diagram
+left to right direction
+skinparam packageStyle rectangle
+
+actor 玩家 as Player
+
+package "DeepDungeon 核心系统" {
+  
+  usecase "启动游戏" as UC_Init
+  usecase "移动角色" as UC_Move
+  usecase "与怪物战斗" as UC_Combat
+  usecase "拾取物品" as UC_Pickup
+  usecase "使用药水" as UC_UsePotion
+  usecase "查看状态" as UC_Status
+  usecase "退出游戏" as UC_Quit
+  
+  usecase "生成地图" as UC_GenerateMap
+  usecase "更新战争迷雾" as UC_FOV
+  usecase "怪物 AI 追踪" as UC_MonsterAI
+  usecase "计算伤害" as UC_CalcDamage
+  usecase "检查胜利条件" as UC_CheckWin
+  usecase "检查失败条件" as UC_CheckLose
+  
+  package "战斗子系统" {
+    usecase "玩家攻击" as UC_PlayerAttack
+    usecase "怪物攻击" as UC_MonsterAttack
+    usecase "闪避判定" as UC_Dodge
+    usecase "升级" as UC_LevelUp
+  }
+}
+
+' 主干关系 (Include)
+Player --> UC_Init
+Player --> UC_Move
+Player --> UC_Combat
+Player --> UC_Pickup
+Player --> UC_UsePotion
+Player --> UC_Status
+Player --> UC_Quit
+
+UC_Init ..> UC_GenerateMap : <<include>>
+UC_Init ..> UC_FOV : <<include>>
+
+UC_Move ..> UC_FOV : <<include>>
+UC_Move ..> UC_Pickup : <<include>>
+
+UC_Combat ..> UC_PlayerAttack : <<include>>
+UC_Combat ..> UC_CalcDamage : <<include>>
+UC_Combat ..> UC_CheckWin : <<include>>
+
+UC_PlayerAttack ..> UC_CalcDamage : <<include>>
+UC_MonsterAttack ..> UC_CalcDamage : <<include>>
+
+UC_Combat ..> UC_CheckLose : <<include>>
+
+' 扩展关系 (Extend)
+UC_Move <.. UC_Combat : <<extend>>  ' 移动时可能触发战斗
+UC_Combat <.. UC_Dodge : <<extend>>  ' 战斗时可能闪避
+UC_Combat <.. UC_MonsterAI : <<extend>>  ' 战斗后怪物反击
+UC_Combat <.. UC_LevelUp : <<extend>>  ' 击败怪物可能升级
+UC_UsePotion <.. UC_Status : <<extend>>  ' 使用药水时查看状态
+
+note right of UC_Combat
+  战斗流程：
+  1. 玩家攻击怪物
+  2. 计算伤害（考虑防御）
+  3. 怪物反击
+  4. 检查双方存活
+end note
+
+note bottom of UC_Move
+  移动约束：
+  - 不能穿墙
+  - 不能穿过水（可站立）
+  - 触发 FOV 更新
+end note
+
+@enduml

@@ -1,0 +1,55 @@
+@startuml DeepDungeon_DFD_Level1
+skinparam rectangle {
+    BorderColor Black
+    BackgroundColor White
+}
+skinparam ellipse {
+    BorderColor Black
+    BackgroundColor LightGray
+}
+
+title DFD Level 1: P2 更新游戏状态 详细分解
+
+' 输入
+ellipse "P1: 有效命令" as InCmd
+
+' 子处理过程
+ellipse "P2.1: 玩家移动处理" as P2_1
+ellipse "P2.2: 战斗判定" as P2_2
+ellipse "P2.3: 怪物 AI 更新" as P2_3
+ellipse "P2.4: 物品拾取" as P2_4
+ellipse "P2.5: 胜负检查" as P2_5
+
+' 数据存储
+rectangle "D1: 地图" as D1
+rectangle "D2: 玩家" as D2
+rectangle "D3: 实体" as D3
+rectangle "D4: 日志" as D4
+
+' 数据流
+InCmd --> P2_1 : 移动命令
+InCmd --> P2_2 : 攻击命令
+
+P2_1 --> D1 : 检查可通行性
+P2_1 --> D3 : 检查怪物存在
+P2_1 --> D2 : 更新玩家位置
+
+P2_1 --> P2_2 : 遇到怪物
+P2_2 --> D2 : 读取玩家 ATK
+P2_2 --> D3 : 怪物承受伤害
+P2_2 --> D2 : 玩家获得经验
+
+P2_2 --> P2_5 : 怪物死亡
+
+P2_3 --> D2 : 读取玩家位置
+P2_3 --> D3 : 怪物移动/攻击
+P2_3 --> D2 : 玩家受到伤害
+
+P2_1 --> P2_4 : 移动后检查
+P2_4 --> D3 : 移除拾取的物品
+P2_4 --> D2 : 添加物品效果
+
+P2_2 --> P2_5 : 检查怪物全灭
+P2_5 --> D4 : 游戏结束消息
+
+@enduml

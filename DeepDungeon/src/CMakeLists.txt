@@ -5,6 +5,9 @@ set(SOURCES
     Map.cpp
     Player.cpp
     Entity.cpp
+    MonsterAI.cpp
+    Renderer.cpp
+    InputHandler.cpp
 )
 
 # 头文件
@@ -14,6 +17,9 @@ set(HEADERS
     ../include/Player.h
     ../include/Entity.h
     ../include/Constants.h
+    ../include/MonsterAI.h
+    ../include/Renderer.h
+    ../include/InputHandler.h
 )
 
 # 创建可执行文件

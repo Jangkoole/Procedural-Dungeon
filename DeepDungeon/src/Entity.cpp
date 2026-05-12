@@ -1,4 +1,5 @@
 #include "Entity.h"
+#include "Player.h"
 
 namespace dungeon {
 
@@ -21,12 +22,34 @@ void Entity::heal(int amount) {
 }
 
 // 怪物实现
-Monster::Monster(int x, int y) 
+Monster::Monster(int x, int y)
     : Entity(dungeon::CHAR_MONSTER, x, y, EntityType::Monster) {
     hp_ = 30;
     maxHp_ = 30;
     atk_ = 8;
     def_ = 1;
+}
+
+void Monster::calculateMoveTowards(int targetX, int targetY, int& outDx, int& outDy) const {
+    int mx = x_, my = y_;
+    
+    if (targetX > mx) outDx = 1;
+    else if (targetX < mx) outDx = -1;
+    else outDx = 0;
+    
+    if (outDx == 0) {
+        if (targetY > my) outDy = 1;
+        else if (targetY < my) outDy = -1;
+        else outDy = 0;
+    } else {
+        outDy = 0;
+    }
+}
+
+void Monster::attackPlayer(Player& player, std::vector<std::string>& log) const {
+    int damage = std::max(1, atk_ - player.def());
+    const_cast<Player&>(player).takeDamage(damage);
+    log.push_back("Monster attacks you for " + std::to_string(damage) + " damage!");
 }
 
 // 物品实现

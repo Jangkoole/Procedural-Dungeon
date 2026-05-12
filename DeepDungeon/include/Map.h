@@ -65,11 +65,8 @@ private:
     void generateCorridors();
     void addWaterFeatures();
     
-    // 辅助函数（公开给 Game 使用）
+    // 辅助函数
     bool isValid(int x, int y) const;
-    
-    // 友元声明
-    friend class Game;
 };
 
 } // namespace dungeon

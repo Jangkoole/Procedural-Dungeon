@@ -1,0 +1,51 @@
+@startuml PAD_UpdateFOV
+title PAD图: Game::updateFOV() - 战争迷雾算法
+
+skinparam backgroundColor #FEFEFE
+skinparam activityBackgroundColor #E3F2FD
+skinparam activityBorderColor #2196F3
+skinparam activityFontSize 14
+
+start
+
+:map_.clearVisibility();
+note right
+  for each tile in tiles_
+    tile.visible = false
+end note
+
+:获取玩家位置;
+note right
+  px = player_->x()
+  py = player_->y()
+end note
+
+:圆形扫描;
+note right
+  for dy = -FOV_RADIUS to FOV_RADIUS
+    for dx = -FOV_RADIUS to FOV_RADIUS
+end note
+
+if (dx*dx + dy*dy <= FOV_RADIUS*FOV_RADIUS?) then (是)
+  :计算目标位置;
+  note right
+    x = px + dx
+    y = py + dy
+  end note
+  
+  if (map_.isValid(x, y)?) then (是)
+    :map_.setTileVisible(x, y);
+    note right
+      tiles_[y][x].visible = true
+      tiles_[y][x].explored = true
+    end note
+  else (否)
+    :跳过;
+  endif
+else (否)
+  :跳过;
+endif
+
+stop
+
+@enduml

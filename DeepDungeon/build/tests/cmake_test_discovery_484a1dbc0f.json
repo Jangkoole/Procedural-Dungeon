@@ -1,0 +1,160 @@
+{
+  "tests": 26,
+  "name": "AllTests",
+  "testsuites": [
+    {
+      "name": "PlayerTest",
+      "tests": 13,
+      "testsuite": [
+        {
+          "name": "DefaultAttributes",
+          "file": "D:\\dev\\VSCode\\ExperimentSoftwareEngineering\\DeepDungeon\\tests\\test_player.cpp",
+          "line": 10
+        },
+        {
+          "name": "AddExp_NoLevelUp",
+          "file": "D:\\dev\\VSCode\\ExperimentSoftwareEngineering\\DeepDungeon\\tests\\test_player.cpp",
+          "line": 33
+        },
+        {
+          "name": "AddExp_LevelUpOnce",
+          "file": "D:\\dev\\VSCode\\ExperimentSoftwareEngineering\\DeepDungeon\\tests\\test_player.cpp",
+          "line": 46
+        },
+        {
+          "name": "AddExp_LevelUpMultipleTimes",
+          "file": "D:\\dev\\VSCode\\ExperimentSoftwareEngineering\\DeepDungeon\\tests\\test_player.cpp",
+          "line": 59
+        },
+        {
+          "name": "AddExp_ExactLevelBoundary",
+          "file": "D:\\dev\\VSCode\\ExperimentSoftwareEngineering\\DeepDungeon\\tests\\test_player.cpp",
+          "line": 72
+        },
+        {
+          "name": "AddExp_LevelUpHealsToFull",
+          "file": "D:\\dev\\VSCode\\ExperimentSoftwareEngineering\\DeepDungeon\\tests\\test_player.cpp",
+          "line": 83
+        },
+        {
+          "name": "AddExp_MultipleLevelsInOneCall",
+          "file": "D:\\dev\\VSCode\\ExperimentSoftwareEngineering\\DeepDungeon\\tests\\test_player.cpp",
+          "line": 96
+        },
+        {
+          "name": "UsePotion_NoPotions",
+          "file": "D:\\dev\\VSCode\\ExperimentSoftwareEngineering\\DeepDungeon\\tests\\test_player.cpp",
+          "line": 113
+        },
+        {
+          "name": "UsePotion_HealsHp",
+          "file": "D:\\dev\\VSCode\\ExperimentSoftwareEngineering\\DeepDungeon\\tests\\test_player.cpp",
+          "line": 123
+        },
+        {
+          "name": "UsePotion_DoesNotExceedMaxHp",
+          "file": "D:\\dev\\VSCode\\ExperimentSoftwareEngineering\\DeepDungeon\\tests\\test_player.cpp",
+          "line": 138
+        },
+        {
+          "name": "UsePotion_MultiplePotions",
+          "file": "D:\\dev\\VSCode\\ExperimentSoftwareEngineering\\DeepDungeon\\tests\\test_player.cpp",
+          "line": 151
+        },
+        {
+          "name": "EquipWeapon_IncreasesTotalAtk",
+          "file": "D:\\dev\\VSCode\\ExperimentSoftwareEngineering\\DeepDungeon\\tests\\test_player.cpp",
+          "line": 179
+        },
+        {
+          "name": "TotalAtk_WithLevelUpAndWeapon",
+          "file": "D:\\dev\\VSCode\\ExperimentSoftwareEngineering\\DeepDungeon\\tests\\test_player.cpp",
+          "line": 193
+        }
+      ]
+    },
+    {
+      "name": "EntityTest",
+      "tests": 9,
+      "testsuite": [
+        {
+          "name": "TakeDamage_ReducesHp",
+          "file": "D:\\dev\\VSCode\\ExperimentSoftwareEngineering\\DeepDungeon\\tests\\test_entity.cpp",
+          "line": 14
+        },
+        {
+          "name": "TakeDamage_DefenseReduction",
+          "file": "D:\\dev\\VSCode\\ExperimentSoftwareEngineering\\DeepDungeon\\tests\\test_entity.cpp",
+          "line": 24
+        },
+        {
+          "name": "TakeDamage_MinimumOneDamage",
+          "file": "D:\\dev\\VSCode\\ExperimentSoftwareEngineering\\DeepDungeon\\tests\\test_entity.cpp",
+          "line": 37
+        },
+        {
+          "name": "TakeDamage_DoesNotGoBelowZero",
+          "file": "D:\\dev\\VSCode\\ExperimentSoftwareEngineering\\DeepDungeon\\tests\\test_entity.cpp",
+          "line": 48
+        },
+        {
+          "name": "Heal_RestoresHp",
+          "file": "D:\\dev\\VSCode\\ExperimentSoftwareEngineering\\DeepDungeon\\tests\\test_entity.cpp",
+          "line": 57
+        },
+        {
+          "name": "Heal_DoesNotExceedMaxHp",
+          "file": "D:\\dev\\VSCode\\ExperimentSoftwareEngineering\\DeepDungeon\\tests\\test_entity.cpp",
+          "line": 66
+        },
+        {
+          "name": "Heal_PartialThenFull",
+          "file": "D:\\dev\\VSCode\\ExperimentSoftwareEngineering\\DeepDungeon\\tests\\test_entity.cpp",
+          "line": 74
+        },
+        {
+          "name": "Move_ChangesPosition",
+          "file": "D:\\dev\\VSCode\\ExperimentSoftwareEngineering\\DeepDungeon\\tests\\test_entity.cpp",
+          "line": 84
+        },
+        {
+          "name": "IsAlive_ReturnsCorrectState",
+          "file": "D:\\dev\\VSCode\\ExperimentSoftwareEngineering\\DeepDungeon\\tests\\test_entity.cpp",
+          "line": 96
+        }
+      ]
+    },
+    {
+      "name": "MonsterTest",
+      "tests": 2,
+      "testsuite": [
+        {
+          "name": "DefaultAttributes",
+          "file": "D:\\dev\\VSCode\\ExperimentSoftwareEngineering\\DeepDungeon\\tests\\test_entity.cpp",
+          "line": 109
+        },
+        {
+          "name": "MonsterCanBeDamaged",
+          "file": "D:\\dev\\VSCode\\ExperimentSoftwareEngineering\\DeepDungeon\\tests\\test_entity.cpp",
+          "line": 120
+        }
+      ]
+    },
+    {
+      "name": "ItemTest",
+      "tests": 2,
+      "testsuite": [
+        {
+          "name": "WeaponItem",
+          "file": "D:\\dev\\VSCode\\ExperimentSoftwareEngineering\\DeepDungeon\\tests\\test_entity.cpp",
+          "line": 138
+        },
+        {
+          "name": "PotionItem",
+          "file": "D:\\dev\\VSCode\\ExperimentSoftwareEngineering\\DeepDungeon\\tests\\test_entity.cpp",
+          "line": 146
+        }
+      ]
+    }
+  ]
+}
