@@ -1,0 +1,345 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background: #0a0a1a;
+  color: #c0c0d0;
+  font-family: 'Courier New', monospace;
+  min-height: 100vh;
+}
+
+.app {
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Start Screen */
+.start-screen {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+}
+
+.start-card {
+  background: #1a1a2e;
+  padding: 40px 50px;
+  border: 2px solid #4a4a6a;
+  border-radius: 8px;
+  text-align: center;
+}
+
+.start-card h1 {
+  font-size: 32px;
+  color: #ffd700;
+  margin-bottom: 8px;
+}
+
+.start-card .subtitle {
+  color: #888;
+  margin-bottom: 24px;
+}
+
+.form-group {
+  margin-bottom: 12px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.form-group label {
+  width: 120px;
+  text-align: right;
+}
+
+.form-group input {
+  background: #0a0a1a;
+  border: 1px solid #4a4a6a;
+  color: #c0c0d0;
+  padding: 6px 10px;
+  font-family: 'Courier New', monospace;
+  width: 80px;
+}
+
+
+.btn-start {
+  margin-top: 16px;
+  background: #2d5a2d;
+  color: #c0ffc0;
+  border: 1px solid #4a8a4a;
+  padding: 10px 24px;
+  font-family: 'Courier New', monospace;
+  font-size: 16px;
+  cursor: pointer;
+  border-radius: 4px;
+}
+
+.btn-start:hover { background: #3a6a3a; }
+.btn-start:disabled { opacity: 0.5; cursor: not-allowed; }
+
+.controls-hint {
+  margin-top: 20px;
+  color: #666;
+  font-size: 13px;
+  line-height: 1.8;
+}
+
+/* Game Layout */
+.game-layout {
+  display: flex;
+  gap: 16px;
+  padding: 16px;
+  align-items: flex-start;
+}
+
+.game-canvas-wrapper {
+  border: 2px solid #3a3a5a;
+  border-radius: 4px;
+  overflow: hidden;
+  flex-shrink: 0;
+}
+
+.game-canvas {
+  display: block;
+  background: #0a0a0a;
+}
+
+/* Sidebar */
+.sidebar {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  width: 220px;
+}
+
+/* Status Panel */
+.status-panel {
+  background: #1a1a2e;
+  border: 1px solid #3a3a5a;
+  padding: 12px;
+  border-radius: 4px;
+}
+
+.status-panel h3 {
+  color: #ffd700;
+  font-size: 14px;
+  margin-bottom: 8px;
+  border-bottom: 1px solid #3a3a5a;
+  padding-bottom: 4px;
+}
+
+.stat-row {
+  display: flex;
+  justify-content: space-between;
+  font-size: 12px;
+  padding: 2px 0;
+}
+
+.stat-row span:first-child { color: #888; }
+.stat-row span:last-child { color: #c0c0d0; }
+
+.hp-bar-outer {
+  flex: 1;
+  height: 10px;
+  background: #333;
+  border-radius: 2px;
+  margin: 0 8px;
+  align-self: center;
+}
+
+.hp-bar-inner {
+  height: 100%;
+  border-radius: 2px;
+  transition: width 0.3s;
+}
+
+.game-over-label {
+  margin-top: 8px;
+  padding: 4px;
+  text-align: center;
+  font-weight: bold;
+  border-radius: 2px;
+  font-size: 14px;
+}
+
+.game-over-label.victory { color: #ffd700; }
+.game-over-label.defeat { color: #ff4444; }
+
+/* Message Log */
+.message-log {
+  background: #1a1a2e;
+  border: 1px solid #3a3a5a;
+  padding: 12px;
+  border-radius: 4px;
+  flex: 1;
+}
+
+.message-log h3 {
+  color: #ffd700;
+  font-size: 14px;
+  margin-bottom: 8px;
+  border-bottom: 1px solid #3a3a5a;
+  padding-bottom: 4px;
+}
+
+.log-entries {
+  max-height: 120px;
+  overflow-y: auto;
+}
+
+.log-entry {
+  font-size: 11px;
+  color: #a0a0b0;
+  padding: 2px 0;
+  border-bottom: 1px solid #2a2a3a;
+}
+
+/* Control Panel */
+.control-panel {
+  background: #1a1a2e;
+  border: 1px solid #3a3a5a;
+  padding: 12px;
+  border-radius: 4px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+}
+
+.dpad {
+  display: grid;
+  grid-template-columns: 48px 48px 48px;
+  grid-template-rows: 48px 48px 48px;
+  gap: 4px;
+}
+
+.dpad-btn {
+  background: #2a2a3e;
+  border: 1px solid #4a4a6a;
+  color: #c0c0d0;
+  font-size: 18px;
+  cursor: pointer;
+  border-radius: 4px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.dpad-btn:hover:not(:disabled) { background: #3a3a5a; }
+.dpad-btn:disabled { opacity: 0.3; cursor: not-allowed; }
+
+.dpad-up { grid-column: 2; grid-row: 1; }
+.dpad-left { grid-column: 1; grid-row: 2; }
+.dpad-center { grid-column: 2; grid-row: 2; }
+.dpad-right { grid-column: 3; grid-row: 2; }
+.dpad-down { grid-column: 2; grid-row: 3; }
+
+.action-buttons {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  width: 100%;
+}
+
+.action-buttons button {
+  background: #2a2a3e;
+  border: 1px solid #4a4a6a;
+  color: #c0c0d0;
+  padding: 6px;
+  font-family: 'Courier New', monospace;
+  font-size: 12px;
+  cursor: pointer;
+  border-radius: 4px;
+  width: 100%;
+}
+
+.action-buttons button:hover:not(:disabled) { background: #3a3a5a; }
+.action-buttons button:disabled { opacity: 0.3; cursor: not-allowed; }
+
+.btn-new-game {
+  background: #3a2a2a;
+  color: #ffaaaa;
+  border: 1px solid #6a4a4a;
+  padding: 8px 16px;
+  font-family: 'Courier New', monospace;
+  font-size: 13px;
+  cursor: pointer;
+  border-radius: 4px;
+  width: 100%;
+}
+
+.btn-new-game:hover { background: #5a3a3a; }
+
+/* Modal */
+.modal-overlay {
+  position: fixed;
+  top: 0; left: 0; right: 0; bottom: 0;
+  background: rgba(0, 0, 0, 0.8);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 100;
+}
+
+.modal {
+  background: #1a1a2e;
+  border: 2px solid #4a4a6a;
+  padding: 40px;
+  border-radius: 8px;
+  text-align: center;
+  max-width: 400px;
+}
+
+.modal.victory { border-color: #ffd700; }
+.modal.defeat { border-color: #ff4444; }
+
+.modal h2 {
+  font-size: 28px;
+  margin-bottom: 16px;
+}
+
+.modal.victory h2 { color: #ffd700; }
+.modal.defeat h2 { color: #ff4444; }
+
+.modal-stats {
+  margin-bottom: 12px;
+  font-size: 14px;
+  line-height: 1.8;
+}
+
+.modal-message {
+  color: #888;
+  margin-bottom: 20px;
+  font-size: 14px;
+}
+
+/* Error */
+.error-banner {
+  position: fixed;
+  top: 8px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: #4a1a1a;
+  border: 1px solid #ff4444;
+  color: #ffaaaa;
+  padding: 8px 16px;
+  border-radius: 4px;
+  display: flex;
+  gap: 12px;
+  align-items: center;
+  z-index: 200;
+}
+
+.error-banner button {
+  background: none;
+  border: 1px solid #ff4444;
+  color: #ffaaaa;
+  padding: 2px 8px;
+  cursor: pointer;
+  font-family: 'Courier New', monospace;
+}
