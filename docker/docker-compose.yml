@@ -1,0 +1,20 @@
+version: '3.8'
+
+services:
+  dungeon-server:
+    build:
+      context: ../dungeon-server
+    image: dungeon-server:latest
+    ports:
+      - "4010:4010"
+    restart: unless-stopped
+
+  dungeon-web:
+    build:
+      context: ../dungeon-web
+    image: dungeon-web:latest
+    ports:
+      - "80:80"
+    depends_on:
+      - dungeon-server
+    restart: unless-stopped

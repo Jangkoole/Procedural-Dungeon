@@ -1,0 +1,9 @@
+server:
+  port: 4010
+
+game:
+  session-timeout-minutes: 30
+  default-dungeon-width: 40
+  default-dungeon-height: 20
+  monster-count: 5
+  item-count: 3
