@@ -1,0 +1,11 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(.\\mvnw.cmd *)",
+      "Bash(findstr *)",
+      "Bash(type *)",
+      "Bash(dir *)"
+    ]
+  },
+  "$version": 4
+}
