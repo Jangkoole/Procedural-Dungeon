@@ -83,7 +83,7 @@ jobs:
 
       - name: Run API integration tests
         working-directory: dungeon-server
-        run: mvn test -Dtest="*IntegrationTest"
+        run: mvn clean test -Dtest="*IntegrationTest"
 
       - name: Stop server
         if: always()
