@@ -16,7 +16,7 @@ WORKDIR /build
 COPY dungeon-web/package.json dungeon-web/package-lock.json ./
 RUN npm ci && npm cache clean --force
 COPY dungeon-web/ .
-RUN ./node_modules/.bin/vite build
+RUN chmod +x node_modules/.bin/* && npm run build
 
 # ============================================================
 # Stage 3: Runtime — Nginx + JRE
