@@ -116,5 +116,5 @@ jobs:
           context: dungeon-server
           push: true
           tags: |
-            ${{ env.REGISTRY }}/${{ env.SERVER_IMAGE }}:${{ github.sha }}
-            ${{ env.REGISTRY }}/${{ env.SERVER_IMAGE }}:latest
+            ${{ env.REGISTRY }}/${{ lower(github.repository_owner) }}/dungeon-server:${{ github.sha }}
+            ${{ env.REGISTRY }}/${{ lower(github.repository_owner) }}/dungeon-server:latest
