@@ -13,8 +13,10 @@ RUN mvn package -DskipTests -q
 # ============================================================
 FROM node:20-alpine AS frontend-builder
 WORKDIR /build
+COPY dungeon-web/package.json dungeon-web/package-lock.json ./
+RUN npm ci && npm cache clean --force
 COPY dungeon-web/ .
-RUN npm install && npm run build
+RUN ./node_modules/.bin/vite build
 
 # ============================================================
 # Stage 3: Runtime — Nginx + JRE
