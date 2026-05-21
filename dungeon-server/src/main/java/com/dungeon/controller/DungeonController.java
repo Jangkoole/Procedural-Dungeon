@@ -34,8 +34,12 @@ public class DungeonController {
 
     @PostMapping("/generate")
     public ResponseEntity<GameStateResponse> generate(@RequestBody GenerateRequest request) {
-        int w = request.getWidth() > 0 ? request.getWidth() : defaultWidth;
-        int h = request.getHeight() > 0 ? request.getHeight() : defaultHeight;
+        int w = request.getWidth();
+        int h = request.getHeight();
+
+        if (w <= 0 || h <= 0) {
+            throw new IllegalArgumentException("Width and height must be positive.");
+        }
 
         if (w < 20 || w > 80) throw new IllegalArgumentException("Width must be between 20 and 80.");
         if (h < 10 || h > 40) throw new IllegalArgumentException("Height must be between 10 and 40.");

@@ -27,6 +27,7 @@ public class DungeonService {
         splitBsp(root, leafNodes, 0);
 
         // Create rooms in leaf nodes
+        boolean anyRoomCreated = false;
         for (BspNode leaf : leafNodes) {
             if (leaf.w < 4 || leaf.h < 4) continue;
             int roomW = random.nextInt(Math.max(1, leaf.w - 4)) + 3;
@@ -36,8 +37,22 @@ public class DungeonService {
             leaf.roomX = roomX; leaf.roomY = roomY;
             leaf.roomW = roomW; leaf.roomH = roomH;
             leaf.hasRoom = true;
+            anyRoomCreated = true;
 
             // Carve room
+            for (int y = roomY; y < roomY + roomH; y++) {
+                for (int x = roomX; x < roomX + roomW; x++) {
+                    tiles[y][x].setType(TileType.FLOOR);
+                }
+            }
+        }
+
+        // Fallback: if BSP produced no rooms, carve a guaranteed room at center
+        if (!anyRoomCreated) {
+            int roomW = Math.min(width - 2, 8);
+            int roomH = Math.min(height - 2, 6);
+            int roomX = (width - roomW) / 2;
+            int roomY = (height - roomH) / 2;
             for (int y = roomY; y < roomY + roomH; y++) {
                 for (int x = roomX; x < roomX + roomW; x++) {
                     tiles[y][x].setType(TileType.FLOOR);
@@ -94,7 +109,7 @@ public class DungeonService {
                 return;
             }
             int split = minSize + random.nextInt(maxSplit - minSize + 1);
-            node.left = new BspNode(node.x, node.y, split, node.w);
+            node.left = new BspNode(node.x, node.y, node.w, split);
             node.right = new BspNode(node.x, node.y + split, node.w, node.h - split);
         }
 

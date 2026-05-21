@@ -2,6 +2,7 @@ package com.dungeon.dto;
 
 import com.dungeon.model.*;
 
+import java.util.ArrayList;
 import java.util.List;
 
 public class GameStateResponse {
@@ -46,7 +47,7 @@ public class GameStateResponse {
 
     public static class DungeonDTO {
         public int width, height;
-        public TileDTO[][] tiles;
+        public List<List<TileDTO>> tiles;
         public List<MonsterDTO> monsters;
         public List<ItemDTO> items;
 
@@ -54,14 +55,18 @@ public class GameStateResponse {
             DungeonDTO dto = new DungeonDTO();
             dto.width = d.getWidth();
             dto.height = d.getHeight();
-            dto.tiles = new TileDTO[d.getHeight()][d.getWidth()];
+            dto.tiles = new ArrayList<>();
             for (int y = 0; y < d.getHeight(); y++) {
+                List<TileDTO> row = new ArrayList<>();
                 for (int x = 0; x < d.getWidth(); x++) {
                     Tile t = d.getTile(x, y);
                     if (t != null) {
-                        dto.tiles[y][x] = new TileDTO(t.getType().name(), t.isVisible(), t.isExplored());
+                        row.add(new TileDTO(t.getType().name(), t.isVisible(), t.isExplored()));
+                    } else {
+                        row.add(new TileDTO("WALL", false, false));
                     }
                 }
+                dto.tiles.add(row);
             }
             dto.monsters = d.getMonsters().stream()
                     .filter(Monster::isAlive)
