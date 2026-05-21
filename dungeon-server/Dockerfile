@@ -3,9 +3,9 @@
 # ============================================================
 FROM eclipse-temurin:17-jdk-alpine AS backend-builder
 WORKDIR /build
-COPY pom.xml ./
+COPY dungeon-server/pom.xml ./
 RUN apk add --no-cache maven && mvn dependency:resolve -q
-COPY src ./src
+COPY dungeon-server/src ./src
 RUN mvn package -DskipTests -q
 
 # ============================================================
