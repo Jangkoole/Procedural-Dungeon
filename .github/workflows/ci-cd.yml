@@ -110,11 +110,15 @@ jobs:
           username: ${{ github.actor }}
           password: ${{ secrets.GITHUB_TOKEN }}
 
+      - name: Lowercase repository owner
+        id: repo
+        run: echo "owner=$(echo '${{ github.repository_owner }}' | tr '[:upper:]' '[:lower:]')" >> $GITHUB_OUTPUT
+
       - name: Build and push server image
         uses: docker/build-push-action@v6
         with:
           context: dungeon-server
           push: true
           tags: |
-            ${{ env.REGISTRY }}/${{ lower(github.repository_owner) }}/dungeon-server:${{ github.sha }}
-            ${{ env.REGISTRY }}/${{ lower(github.repository_owner) }}/dungeon-server:latest
+            ${{ env.REGISTRY }}/${{ steps.repo.outputs.owner }}/dungeon-server:${{ github.sha }}
+            ${{ env.REGISTRY }}/${{ steps.repo.outputs.owner }}/dungeon-server:latest
