@@ -28,7 +28,7 @@ jobs:
 
       - name: Build with Maven
         working-directory: dungeon-server
-        run: mvn package -q
+        run: mvn clean package -q
 
       - name: Run unit tests
         working-directory: dungeon-server
