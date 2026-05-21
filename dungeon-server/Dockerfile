@@ -13,10 +13,8 @@ RUN mvn package -DskipTests -q
 # ============================================================
 FROM node:20-alpine AS frontend-builder
 WORKDIR /build
-COPY dungeon-web/package.json dungeon-web/package-lock.json* ./
-RUN npm install
 COPY dungeon-web/ .
-RUN npm run build
+RUN npm install && npm run build
 
 # ============================================================
 # Stage 3: Runtime — Nginx + JRE
